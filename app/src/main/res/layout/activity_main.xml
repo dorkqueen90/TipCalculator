@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/billTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/bill_total"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <EditText
+        android:id="@+id/billValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:hint="@string/enter_bill_value"
+        android:inputType="number"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toEndOf="@+id/billTotal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.008" />
+
+    <TextView
+        android:id="@+id/tipPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/tip"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tipGroup"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/billTotal"
+        app:layout_constraintVertical_bias="0.001" />
+
+    <RadioGroup
+        android:id="@+id/tipGroup"
+        android:layout_width="281dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="32dp"
+        android:checkedButton="@id/tip10"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/billValue"
+        app:layout_constraintVertical_bias="0.001">
+
+        <RadioButton
+            android:id="@+id/tip10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/tip10"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/tip15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/tip15" />
+
+        <RadioButton
+            android:id="@+id/tip18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/tip18" />
+
+        <RadioButton
+            android:id="@+id/tipCustom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/tipCustom" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/customText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/customText"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipPercent"
+        app:layout_constraintVertical_bias="0.115" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="221dp"
+        android:layout_height="34dp"
+        android:max="50"
+        android:progress="25"
+        android:scrollbarDefaultDelayBeforeFade="400"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.356"
+        app:layout_constraintStart_toEndOf="@+id/customText"
+        app:layout_constraintTop_toBottomOf="@+id/tipGroup"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/seekbarText"
+        android:layout_width="55dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/seekBar"
+        app:layout_constraintTop_toBottomOf="@+id/tipGroup"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <TextView
+        android:id="@+id/tipText"
+        android:layout_width="44dp"
+        android:layout_height="28dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/tip_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customText"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <TextView
+        android:id="@+id/tipTotal"
+        android:layout_width="39dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/tipTotal"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toEndOf="@+id/tipText"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.183" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/total"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipText"
+        app:layout_constraintVertical_bias="0.16" />
+
+    <TextView
+        android:id="@+id/total_with_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/total_with_tip"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintStart_toEndOf="@+id/total"
+        app:layout_constraintTop_toBottomOf="@+id/tipTotal"
+        app:layout_constraintVertical_bias="0.165" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="332dp"
+        android:layout_height="60dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/exit_button"
+        android:textColorHighlight="#2196F3"
+        android:textColorLink="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.627" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
